@@ -281,6 +281,8 @@
      <packagereq type='mandatory'>perl-Pod-Escapes</packagereq>
      <packagereq type='mandatory'>perl-Pod-Simple</packagereq>
      <packagereq type='mandatory'>perl-version</packagereq>
+     <packagereq type='mandatory'>mysql-devel</packagereq>
+     <packagereq type='mandatory'>python-devel</packagereq>
     </packagelist>
   </group>
   <group>
