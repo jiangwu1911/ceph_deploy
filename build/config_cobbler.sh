@@ -30,7 +30,6 @@ function answer_yes_or_no() {
 }
 
 function splash_screen() {
-    fbterm -s 14 -n Monaco
     clear
     echo -e "\n            欢迎使用分布式存储系统\n"
 }
