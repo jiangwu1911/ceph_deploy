@@ -64,7 +64,7 @@ sed -i "s/^hosts:.*/hosts: files/" /etc/nsswitch.conf
 
 # Upgrade kernel
 yum install -y kernel-ml
-sed -i "s/^default=0/default=1/" /boot/grub/grub.conf
+sed -i "s/^default=1/default=0/" /boot/grub/grub.conf
 
 # Config yum
 yum install -y ntpdate
