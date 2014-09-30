@@ -68,7 +68,7 @@ sed -i "s/^default=1/default=0/" /boot/grub/grub.conf
 
 # Config yum
 yum install -y ntpdate
-echo "00 */1 * * * root /usr/sbin/ntpdate 192.168.1.51;/sbin/hwclock -w" > /tmp/cron.ntp
+echo "00 */1 * * * root /usr/sbin/ntpdate 10.20.0.3; /sbin/hwclock -w" > /tmp/cron.ntp
 crontab /tmp/cron.ntp
 
 %end
