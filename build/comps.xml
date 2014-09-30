@@ -264,6 +264,25 @@
      <packagereq type='mandatory'>fbterm</packagereq>
     </packagelist>
   </group>
+  <group>
+    <id>mysql</id>
+    <name>MySQL</name>
+    <description/>
+    <default>true</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+     <packagereq type='mandatory'>mysql</packagereq>
+     <packagereq type='mandatory'>mysql-server</packagereq>
+     <packagereq type='mandatory'>perl</packagereq>
+     <packagereq type='mandatory'>perl-DBD-MySQL</packagereq>
+     <packagereq type='mandatory'>perl-DBI</packagereq>
+     <packagereq type='mandatory'>perl-libs</packagereq>
+     <packagereq type='mandatory'>perl-Module-Pluggable</packagereq>
+     <packagereq type='mandatory'>perl-Pod-Escapes</packagereq>
+     <packagereq type='mandatory'>perl-Pod-Simple</packagereq>
+     <packagereq type='mandatory'>perl-version</packagereq>
+    </packagelist>
+  </group>
   <category>
     <id>core</id>
     <name>Core</name>
@@ -273,6 +292,7 @@
       <groupid>core</groupid>
       <groupid>cobbler</groupid>
       <groupid>fbterm</groupid>
+      <groupid>mysql</groupid>
     </grouplist>
   </category>
 </comps>

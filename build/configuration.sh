@@ -1,12 +1,11 @@
 #!/bin/sh
 
 #TODO
-# 1. Let user input network parameters
-# 2. Replace ip address in dhcp template, cent65.ks...
-# 3. Let user input cobbler password
-# 4. Let user input system password
+# 1. Auto run after OS installed
+# 2. Let user input cobbler password
+# 3. Let user input system password
 
-PASSWORD='abc123'
+PASSWORD='zhu88jie'
 
 sourcedir='/root/software'
 

@@ -8,7 +8,7 @@ cp comps.xml $ISODIR
 createrepo -g comps.xml $ISODIR
 
 cp ks.cfg $ISODIR
-cp config_cobbler.sh $ISODIR/software/cobbler/
+cp configuration.sh $ISODIR/software/cobbler/
 cp centos65.ks $ISODIR/software/cobbler/centos65/
 cp bootstrap_admin_node.conf $ISODIR/software/cobbler/
 
