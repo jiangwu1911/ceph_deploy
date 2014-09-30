@@ -283,6 +283,21 @@
      <packagereq type='mandatory'>perl-version</packagereq>
     </packagelist>
   </group>
+  <group>
+    <id>gcc</id>
+    <name>gcc</name>
+    <description/>
+    <default>true</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+     <packagereq type='mandatory'>cloog-ppl</packagereq>
+     <packagereq type='mandatory'>cpp</packagereq>
+     <packagereq type='mandatory'>gcc</packagereq>
+     <packagereq type='mandatory'>libgomp</packagereq>
+     <packagereq type='mandatory'>mpfr</packagereq>
+     <packagereq type='mandatory'>ppl</packagereq>
+    </packagelist>
+  </group>
   <category>
     <id>core</id>
     <name>Core</name>
@@ -293,6 +308,7 @@
       <groupid>cobbler</groupid>
       <groupid>fbterm</groupid>
       <groupid>mysql</groupid>
+      <groupid>gcc</groupid>
     </grouplist>
   </category>
 </comps>

@@ -6,6 +6,7 @@
 # 3. Let user input system password
 
 PASSWORD='zhu88jie'
+MYSQL_PASSWORD='zhu88jie'
 
 sourcedir='/root/software'
 
@@ -174,6 +175,28 @@ function install_ceph_deploy() {
     pip install ceph-deploy
 }
 
+function config_mysql() {
+    service mysqld start
+    chkconfig mysqld on
+
+    mysql_secure_installation <<EOF
+
+Y
+$MYSQL_PASSWORD
+$MYSQL_PASSWORD
+Y
+Y
+Y
+EOF
+
+mysql -u root -p$MYSQL_PASSWORD <<EOF
+CREATE DATABASE dstorage;  
+GRANT ALL ON dstorage.* TO 'dstorage'@'%' IDENTIFIED BY 'dstorage';  
+commit;  
+EOF
+    service mysqld restart
+}
+
 config_network
 config_cobbler
 start_cobbler
@@ -183,3 +206,4 @@ import_centos65
 
 install_ntp_server
 install_ceph_deploy
+config_mysql
