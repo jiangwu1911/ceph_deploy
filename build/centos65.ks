@@ -62,6 +62,10 @@ EOF
 # Config network
 sed -i "s/^hosts:.*/hosts: files/" /etc/nsswitch.conf
 
+# Upgrade kernel
+yum install -y kernel-ml
+sed -i "s/^default=0/default=1/" /etc/grub.conf
+
 # Config yum
 yum install -y ntpdate
 echo "00 */1 * * * root /usr/sbin/ntpdate 192.168.1.51;/sbin/hwclock -w" > /tmp/cron.ntp
