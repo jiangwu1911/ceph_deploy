@@ -1,0 +1,11 @@
+[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirrors.sohu.com/centos/6.5/os/x86_64/
+gpgcheck=0
+enabled=1
+
+[epel]
+name=epel
+baseurl=http://mirrors.sohu.com/fedora-epel/6Server/x86_64/
+gpgcheck=0
+enabled=1

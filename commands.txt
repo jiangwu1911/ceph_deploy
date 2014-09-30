@@ -1,0 +1,20 @@
+# Import image
+cobbler import --path=/root/centos7/ --name=centos7 --arch=x86_64   
+cobbler import --path=/root/centos65/ --name=centos65 --arch=x86_64   
+
+
+# Add profile
+cobbler profile add --name=centos7-x86_64 --distro=centos7-x86_64 --kickstart=/root/cobbler/centos7.ks
+cobbler profile add --name=centos65-x86_64 --distro=centos65-x86_64 --kickstart=/root/cobbler/centos65.ks
+
+# Edit profile
+cobbler profile edit --name=centos7-x86_64 --distro=centos7-x86_64 --kickstart=/root/cobbler/centos7.ks
+cobbler profile edit --name=centos65-x86_64 --distro=centos65-x86_64 --kickstart=/root/cobbler/centos65.ks
+
+
+# Remove system
+cobbler system remove --name=c7-n01
+
+# Add system
+cobbler system add --name=c65-n01 --hostname=c65-n01 --profile=centos65-x86_64 --mac='00:0C:29:0B:70:3E' --interface=ens33 --ip-address='10.0.10.20' --netmask='255.255.255.0' --static=1
+cobbler system edit --name=c65-n01 --mac='00:0C:29:0B:70:48' --interface=ens34 --ip-address='192.168.206.150' --netmask='255.255.255.0' --gateway='192.168.206.2' --static=1 --name-servers='192.168.206.2'
