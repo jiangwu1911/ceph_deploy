@@ -250,6 +250,20 @@
      <packagereq type='mandatory'>yum-utils</packagereq>
     </packagelist>
   </group>   
+  <group>
+    <id>fbterm</id>
+    <name>Fbterm</name>
+    <description/>
+    <default>true</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+     <packagereq type='mandatory'>cjkuni-fonts-common</packagereq>
+     <packagereq type='mandatory'>cjkuni-uming-fonts</packagereq>
+     <packagereq type='mandatory'>freetype</packagereq>
+     <packagereq type='mandatory'>fontconfig</packagereq>
+     <packagereq type='mandatory'>fbterm</packagereq>
+    </packagelist>
+  </group>
   <category>
     <id>core</id>
     <name>Core</name>
@@ -257,6 +271,8 @@
     <display_order>60</display_order>
     <grouplist>
       <groupid>core</groupid>
+      <groupid>cobbler</groupid>
+      <groupid>fbterm</groupid>
     </grouplist>
   </category>
 </comps>

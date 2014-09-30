@@ -30,6 +30,7 @@ function answer_yes_or_no() {
 }
 
 function splash_screen() {
+    fbterm -s 14 -n Monaco
     clear
     echo -e "\n            欢迎使用分布式存储系统\n"
 }
@@ -56,7 +57,7 @@ function config_network() {
         get_input 'IP地址' $ip IPADDR
         get_input '掩码' $netmask NETMASK
         get_input '网关地址' $gateway GATEWAY
-        SUBNET=$(echo $IPADDR | cut -d. -f1-3)'.0/24'
+        SUBNET=$(echo $IPADDR | cut -d. -f1-3)'.0'
         dhcp_start=$(echo $IPADDR | cut -d. -f1-3)'.100'
         dhcp_end=$(echo $IPADDR | cut -d. -f1-3)'.254'
         get_input 'DHCP起始地址' $dhcp_start DHCP_START
@@ -177,10 +178,10 @@ function install_ceph_deploy() {
 
 config_network
 config_cobbler
-#start_cobbler
+start_cobbler
 
-#generate_sshkey
-#import_centos65
+generate_sshkey
+import_centos65
 
-#install_ntp_server
-#install_ceph_deploy
+install_ntp_server
+install_ceph_deploy
