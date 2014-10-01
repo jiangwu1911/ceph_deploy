@@ -69,7 +69,7 @@ yum install btrfs-progs
 
 # Config yum
 yum install -y ntpdate
-echo "00 */1 * * * root /usr/sbin/ntpdate 10.20.0.3; /sbin/hwclock -w" > /tmp/cron.ntp
+echo "00 */1 * * * /usr/sbin/ntpdate 10.20.0.3 >/dev/null 2>&1; /sbin/hwclock -w >/dev/null 2>&1 " > /tmp/cron.ntp
 crontab /tmp/cron.ntp
 
 %end
