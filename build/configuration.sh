@@ -144,6 +144,8 @@ function import_centos65() {
 
     cp $sourcedir/cobbler/centos65/centos65.ks /var/lib/cobbler/kickstarts/
     cp -r $sourcedir/ceph /var/www/cobbler/ks_mirror
+    umount /root/centos65
+    rm -rf /root/centos65
 
     sshkey=`cat /root/.ssh/id_rsa.pub`
     sed -i "s#ssh-rsa.*#$sshkey#" /var/lib/cobbler/kickstarts/centos65.ks

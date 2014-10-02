@@ -72,4 +72,10 @@ yum install -y ntpdate
 echo "00 */1 * * * /usr/sbin/ntpdate 10.20.0.3 >/dev/null 2>&1; /sbin/hwclock -w >/dev/null 2>&1 " > /tmp/cron.ntp
 crontab /tmp/cron.ntp
 
+cat >> /etc/sysctl.conf <<EOF
+
+# Added for CEPH
+kernel.pid_max = 4194303
+EOF
+
 %end
